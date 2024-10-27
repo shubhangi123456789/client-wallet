@@ -1,0 +1,28 @@
+<!-- <button (click)="restData.getConsultantDetails()">Get Booking Info</button> -->
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+    <button (click)="restData.getConsultantDetails()">Get Booking Info</button> 
+</div>
+
+<div style="margin-top: 20px;">
+    <table style="width: 100%; border-collapse: collapse; background-color: blanchedalmond;">
+        <thead>
+            <tr>
+                <th style="border: 2px solid black; padding: 10px; text-align: left;">Consultant Id</th>
+                <th style="border: 2px solid black; padding: 10px; text-align: left;">Years of Experience</th>
+                <th style="border: 2px solid black; padding: 10px; text-align: left;">Rating</th>
+                <th style="border: 2px solid black; padding: 10px; text-align: left;">Projects Completed</th>
+                <th style="border: 2px solid black; padding: 10px; text-align: left;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of restData.bookingdata">
+                <td  style="border: 2px solid black; padding: 10px;">{{ item.consultantId }}</td>
+                <td style="border: 2px solid black; padding: 10px;">{{ item.profileInfo }}</td>
+                <td style="border: 2px solid black; padding: 10px;">{{ item.rating }}</td>
+                <td style="border: 2px solid black; padding: 10px;">{{ item.totalProjects }}</td>
+                <!-- <button (click)="restData.deductFromWallet(clientId,10);restData.updateAppointments()">Action</button>-->
+                <button (click)="handleAction(item.consultantId)">Action</button>
+            </tr>
+        </tbody>
+    </table>
+</div>
